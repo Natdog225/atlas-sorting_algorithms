@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * selection_sort - Sorts an array of integers in ascending order using Selection sort.
+ * selection_sort - Sorts an array of ints in ascending order using Selection.
  * @array: The array to be sorted.
  * @size: The size of the array.
  */
@@ -25,6 +25,7 @@ void selection_sort(int *array, size_t size)
 		{
 			/* Swap the found minimum element with the first element */
 			int temp = array[min_idx];
+
 			array[min_idx] = array[i];
 			array[i] = temp;
 
