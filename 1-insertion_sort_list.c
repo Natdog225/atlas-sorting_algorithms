@@ -17,29 +17,29 @@ void insertion_sort_list(listint_t **list)
 	current = (*list)->next;
 
 	while (current)
+	{
+		insert = current;
+		current = current->next;
+
+		while (insert->prev && insert->n < insert->prev->n)
 		{
-			insert = current;
-			current = current->next;
+			temp = insert->prev;
+			temp->next = insert->next;
 
-			while (insert->prev && insert->n < insert->prev->n)
-			{
-				temp = insert->prev;
-				temp->next = insert->next;
+			if (insert->next)
+				insert->next->prev = temp;
 
-				if (insert->next)
-					insert->next->prev = temp;
+			insert->prev = temp->prev;
+			insert->next = temp;
 
-				insert->prev = temp->prev;
-				insert->next = temp;
+			if (insert->prev)
+				insert->prev->next = insert;
+			else
+				*list = insert;
 
-				if (insert->prev)
-					insert->prev->next = insert;
-				else
-					*list = insert;
+			temp->prev = insert;
 
-				temp->prev = insert;
-
-				print_list(*list);
-			}
+			print_list(*list);
 		}
+	}
 }
