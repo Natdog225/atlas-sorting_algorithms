@@ -23,6 +23,7 @@ size_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
 			{
 				/* Swap elements */
 				int temp = array[i];
+
 				array[i] = array[j];
 				array[j] = temp;
 				print_array(array, size);
@@ -33,6 +34,7 @@ size_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
 	{
 		/* Swap pivot to its final position */
 		int temp = array[i + 1];
+
 		array[i + 1] = array[high];
 		array[high] = temp;
 		print_array(array, size);
@@ -41,7 +43,7 @@ size_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size)
 }
 
 /**
- * quick_sort_recursive - Recursively sorts a subarray using Quick sort (patent pending)
+ * quick_sort_recursive - sorts a subarray using Quick sort (patent pending)
  * @array: The array to be sorted.
  * @low: The starting index of the subarray.
  * @high: The ending index of the subarray.
