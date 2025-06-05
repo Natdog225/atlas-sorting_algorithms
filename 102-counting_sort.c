@@ -52,7 +52,7 @@ void counting_sort(int *array, size_t size)
 		return;
 	}
 
-	/* Build the output array */
+	/* Build the output */
 	for (i = size - 1; (int)i >= 0; i--)
 	{
 		output_array[count_array[array[i]] - 1] = array[i];
